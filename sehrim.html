@@ -4,31 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Şehrim - Sakarya</title>
-    <!-- Slider için Bootstrap kullanacağız -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+        .carousel-caption {
+            bottom: 20%;
+        }
+    </style>
 </head>
 <body>
-    <header class="bg-primary text-white text-center py-3">
-        <h1>Benim Şehrim: Sakarya</h1>
-    </header>
 
-    <main class="container mt-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Web Projem</a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html">Ana Sayfa</a>
+                <a class="nav-link" href="hakkinda.html">Hakkında</a>
+                <a class="nav-link" href="ozgecmis.html">Özgeçmiş</a>
+                <a class="nav-link active" href="sehrim.html">Şehrim</a>
+                <a class="nav-link" href="iletisim.html">İletişim</a>
+                <a class="nav-link" href="login.html">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
         <section>
             <h2>Sakarya Hakkında</h2>
             <p><strong>Nüfus:</strong> Yaklaşık 1.080.000</p>
-            <p><strong>Gezilecek Yerler:</strong> Sapanca Gölü, Taraklı, Acarlar Longozu, Justinianos Köprüsü.</p>
+            <p>Marmara Bölgesi'nin parlayan yıldızı Sakarya, doğal güzellikleri ve tarihi dokusuyla ziyaretçilerine eşsiz manzaralar sunmaktadır.</p>
         </section>
 
-        <!-- Slider Bölümü (En az 4 resim) -->
         <section class="mt-5">
-            <h2>Şehrimden Kareler</h2>
+            <h2 class="mb-4">Şehrimden Kareler</h2>
             <div id="citySlider" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active"><img src="resim1.jpg" class="d-block w-100" alt="Gezilecek Yer 1"></div>
-                    <div class="carousel-item"><img src="resim2.jpg" class="d-block w-100" alt="Gezilecek Yer 2"></div>
-                    <div class="carousel-item"><img src="resim3.jpg" class="d-block w-100" alt="Gezilecek Yer 3"></div>
-                    <div class="carousel-item"><img src="resim4.jpg" class="d-block w-100" alt="Gezilecek Yer 4"></div>
+                    
+                    <div class="carousel-item active">
+                        <img src="resim1.jpg" class="d-block w-100" alt="Sakarya Üniversitesi">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                            <h3>Sakarya Üniversitesi</h3>
+                            <p>Esentepe kampüsü ve muhteşem Sapanca Gölü manzarası.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="resim2.jpg" class="d-block w-100" alt="Tarihi Uzunçarşı">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                            <h3>Tarihi Uzunçarşı</h3>
+                            <p>Sakarya'nın en köklü alışveriş merkezi; nostaljik dükkanları ve tarihi dokusuyla şehrin simgesi.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="resim3.jpg" class="d-block w-100" alt="Doğal Güzellikler">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                            <h3>Doğal Güzellikler</h3>
+                            <p>Sakarya ve çevresindeki huzur veren şelaleler ve yeşil alanlar.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="resim4.jpg" class="d-block w-100" alt="Ormanpark">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                            <h3>Ormanpark</h3>
+                            <p>Şehrin merkezinde doğayla iç içe, huzurlu bir mola noktası ve Sakarya'ın en sevilen mesire alanı.</p>
+                        </div>
+                    </div>
+
                 </div>
+                
                 <button class="carousel-control-prev" type="button" data-bs-target="#citySlider" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </button>
@@ -39,8 +88,8 @@
         </section>
     </main>
 
-    <footer class="text-center mt-5 py-3">
-        <p><a href="index.html">Ana Sayfaya Dön</a></p>
+    <footer class="text-center mt-5 py-3 border-top">
+        <p><a href="index.html" class="text-decoration-none text-dark">Ana Sayfaya Dön</a></p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
