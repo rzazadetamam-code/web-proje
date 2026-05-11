@@ -13,7 +13,7 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title mb-4 text-center">Gönderdiğiniz Bilgiler:</h5>
-                <div id="display" class="bg-white p-3 border rounded"></div>
+                <div id="display" class="bg-white p-3 border rounded shadow-sm"></div>
             </div>
             <div class="card-footer text-center">
                 <a href="index.html" class="btn btn-primary">Ana Sayfaya Dön</a>
@@ -21,10 +21,11 @@
         </div>
     </div>
     <script>
+        // URL'den gelen verileri okuma
         const params = new URLSearchParams(window.location.search);
-        let output = "<table class='table table-striped'>";
+        let output = "<table class='table table-bordered table-striped'>";
         params.forEach((val, key) => {
-            output += `<tr><th>${key.toUpperCase()}</th><td>${val}</td></tr>`;
+            output += `<tr><th class='bg-light' style='width: 30%'>${key.toUpperCase()}</th><td>${val}</td></tr>`;
         });
         output += "</table>";
         document.getElementById("display").innerHTML = output;
