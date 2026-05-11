@@ -31,10 +31,8 @@ function loginKontrol() {
     var user = document.getElementById("username").value.trim();
     var pass = document.getElementById("password").value.trim();
 
-    // Ödev kuralı: Kullanıcı adı mail, şifre numaran olmalı
-    if (user === "g211210001@sakarya.edu.tr" && pass === "g211210001") {
-        // Uğurlu giriş: İstifadəçi adını (mailin ön hissəsini) növbəti səhifəyə ötürürük
-        var ogrenciNo = user.split('@')[0];
+  if (user === "b251210592@sakarya.edu.tr" && pass === "b251210592") {
+var ogrenciNo = user.split('@')[0];
         window.location.href = "giris_basarili.html?no=" + ogrenciNo;
         return false; // Formun öz-özünə refresh olmasını maneə törədir
     } else {
