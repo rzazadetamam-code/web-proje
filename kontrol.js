@@ -28,13 +28,17 @@ function jsDenetleVeGonder() {
 
 // LOGIN KONTROLÜ (Əgər login səhifəsində də istifadə edirsənsə)
 function loginKontrol() {
-    var user = document.getElementById("username").value;
-    var pass = document.getElementById("password").value;
+    var user = document.getElementById("username").value.trim();
+    var pass = document.getElementById("password").value.trim();
+
+    // Ödev kuralı: Kullanıcı adı mail, şifre numaran olmalı
     if (user === "g211210001@sakarya.edu.tr" && pass === "g211210001") {
-        window.location.href = "giris_basarili.html?user=" + user.split('@')[0];
-        return false;
+        // Uğurlu giriş: İstifadəçi adını (mailin ön hissəsini) növbəti səhifəyə ötürürük
+        var ogrenciNo = user.split('@')[0];
+        window.location.href = "giris_basarili.html?no=" + ogrenciNo;
+        return false; // Formun öz-özünə refresh olmasını maneə törədir
     } else {
-        alert("Hatalı giriş!");
+        alert("Hatalı kullanıcı adı veya şifre!");
         return false;
     }
 }
