@@ -26,13 +26,13 @@ function jsDenetleVeGonder() {
     window.location.href = `sonuc.html?ad=${ad}&soyad=${soyad}&email=${email}&tel=${tel}&konu=${konu}&mesaj=${mesaj}&yontem=VanillaJS`;
 }
 
-// LOGIN KONTROLÜ (Əgər login səhifəsində də istifadə edirsənsə)
+// LOGIN KONTROLÜ
 function loginKontrol() {
     var user = document.getElementById("username").value.trim();
     var pass = document.getElementById("password").value.trim();
 
   if (user === "b251210592@sakarya.edu.tr" && pass === "b251210592") {
-var ogrenciNo = user.split('@')[0];
+        var ogrenciNo = user.split('@')[0];
         window.location.href = "giris_basarili.html?no=" + ogrenciNo;
         return false; // Formun öz-özünə refresh olmasını maneə törədir
     } else {
