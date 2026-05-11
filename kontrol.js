@@ -1,4 +1,20 @@
-// 1. İletişim Formu Kontrolü
+// 1. GİRİŞ (LOGIN) KONTROLÜ
+// Ödev kuralı: Kullanıcı adı = Mail, Şifre = Öğrenci No
+function loginKontrol() {
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+
+ if (user === "b251210592@sakarya.edu.tr" && pass === "b251210592") {
+        alert("Hoş geldiniz b251210592!");
+        window.location.href = "index.html";
+        return false;
+    } else {
+        alert("Hatalı kullanıcı adı (email) veya şifre!");
+        return false;
+    }
+}
+
+// 2. İLETİŞİM FORMU KONTROLÜ
 function formuKontrolEt() {
     var ad = document.forms["iletisimFormu"]["ad"].value;
     var soyad = document.forms["iletisimFormu"]["soyad"].value;
@@ -9,22 +25,7 @@ function formuKontrolEt() {
         alert("Lütfen tüm alanları doldurunuz!");
         return false;
     }
+    
     alert("Mesajınız başarıyla iletildi!");
     return true;
-}
-
-// 2. Login (Giriş) Kontrolü
-function loginKontrol() {
-    var user = document.getElementById("username").value;
-    var pass = document.getElementById("password").value;
-
-    // 'user' kismina kendi ogrenci numarani (mis: g211210001) yaz
-   if (user === "g211210001" && pass === "123") {
-        alert("Hoş geldiniz g211210001!");
-        window.location.href = "index.html"; // Giriş uğurludursa ana səhifəyə göndərir
-        return false; 
-    } else {
-        alert("Hatalı kullanıcı adı veya şifre!");
-        return false;
-    }
 }
