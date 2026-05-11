@@ -1,9 +1,11 @@
-// GİRİŞ KONTROLÜ
+// 1. GİRİŞ (LOGIN) KONTROLÜ
 function loginKontrol() {
     var user = document.getElementById("username").value;
     var pass = document.getElementById("password").value;
 
+    // Ödev kuralı: Kullanıcı adı = Mail, Şifre = Öğrenci No
     if (user === "g211210001@sakarya.edu.tr" && pass === "g211210001") {
+        alert("Giriş Başarılı! Hoş geldiniz.");
         window.location.href = "giris_basarili.html?user=" + user.split('@')[0];
         return false;
     } else {
@@ -12,8 +14,8 @@ function loginKontrol() {
     }
 }
 
-// İLETİŞİM JS KONTROLÜ
-function jsKontrolEt() {
+// 2. İLETİŞİM FORMU DENETLE VE GÖNDER (Vanilla JS)
+function jsDenetleVeGonder() {
     var ad = document.getElementById("ad").value;
     var soyad = document.getElementById("soyad").value;
     var email = document.getElementById("email").value;
@@ -24,22 +26,21 @@ function jsKontrolEt() {
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     var telPattern = /^[0-9]+$/;
 
-    if (ad == "" || soyad == "" || email == "" || tel == "" || konu == "" || mesaj == "") {
-        alert("JS: Boş alan bırakmayınız!");
+    // Denetleme Başlangıcı
+    if (ad === "" || soyad === "" || email === "" || tel === "" || konu === "" || mesaj === "") {
+        alert("JS Mesajı: Lütfen formu eksiksiz doldurunuz!");
         return false;
     }
     if (!emailPattern.test(email)) {
-        alert("JS: Email formatı hatalı!");
+        alert("JS Mesajı: Geçerli bir e-mail formatı giriniz!");
         return false;
     }
     if (!telPattern.test(tel)) {
-        alert("JS: Telefon sadece rakam olmalı!");
+        alert("JS Mesajı: Telefon numarası sadece rakamlardan oluşmalıdır!");
         return false;
     }
 
-    alert("JS: Onaylandı! Bilgileriniz gönderiliyor...");
-    window.location.href = `sonuc.html?ad=${ad}&soyad=${soyad}&email=${email}&tel=${tel}&konu=${konu}&mesaj=${mesaj}&metot=JavaScript`;
-}
-    alert("JavaScript Mesajı: Kontrol başarılı! Form gönderilmeye hazır.");
-    return true;
+    // Denetleme Başarılıysa Gönderim (Yönlendirme)
+    alert("JS Mesajı: Denetleme Başarılı! Bilgileriniz Sonuç Sayfasına Gönderiliyor...");
+    window.location.href = `sonuc.html?ad=${ad}&soyad=${soyad}&email=${email}&tel=${tel}&konu=${konu}&mesaj=${mesaj}&metot=VanillaJS`;
 }
