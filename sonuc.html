@@ -2,33 +2,32 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Gönderim Sonucu</title>
+    <title>Sonuç - Web Projesi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light p-5">
-    <div class="container">
-        <div class="card shadow border-0">
-            <div class="card-header bg-success text-white text-center">
-                <h2>Form Başarıyla Gönderildi</h2>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="card shadow mx-auto" style="max-width: 600px;">
+            <div class="card-header bg-success text-white">
+                <h3 class="text-center mb-0">Form Verileri Alındı</h3>
             </div>
             <div class="card-body">
-                <h5 class="card-title mb-4 text-center">Gönderdiğiniz Bilgiler:</h5>
-                <div id="display" class="bg-white p-3 border rounded shadow-sm"></div>
+                <div id="dataDisplay"></div>
             </div>
             <div class="card-footer text-center">
                 <a href="index.html" class="btn btn-primary">Ana Sayfaya Dön</a>
             </div>
         </div>
     </div>
+
     <script>
-        // URL'den gelen verileri okuma
         const params = new URLSearchParams(window.location.search);
-        let output = "<table class='table table-bordered table-striped'>";
+        let table = "<table class='table table-striped table-hover'>";
         params.forEach((val, key) => {
-            output += `<tr><th class='bg-light' style='width: 30%'>${key.toUpperCase()}</th><td>${val}</td></tr>`;
+            table += `<tr><th class='text-capitalize'>${key}:</th><td>${val}</td></tr>`;
         });
-        output += "</table>";
-        document.getElementById("display").innerHTML = output;
+        table += "</table>";
+        document.getElementById("dataDisplay").innerHTML = table;
     </script>
 </body>
 </html>
