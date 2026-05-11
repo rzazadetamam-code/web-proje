@@ -1,11 +1,10 @@
-// 1. GİRİŞ (LOGIN) KONTROLÜ
+// LOGIN KONTROLÜ
 function loginKontrol() {
     var user = document.getElementById("username").value;
     var pass = document.getElementById("password").value;
 
-    // Ödev kuralı: Kullanıcı adı = Mail, Şifre = Öğrenci No
     if (user === "g211210001@sakarya.edu.tr" && pass === "g211210001") {
-        alert("Giriş Başarılı! Hoş geldiniz.");
+        alert("Giriş Başarılı!");
         window.location.href = "giris_basarili.html?user=" + user.split('@')[0];
         return false;
     } else {
@@ -14,33 +13,36 @@ function loginKontrol() {
     }
 }
 
-// 2. İLETİŞİM FORMU DENETLE VE GÖNDER (Vanilla JS)
+// İLETİŞİM JS DENETLE VE GÖNDER
 function jsDenetleVeGonder() {
-    var ad = document.getElementById("ad").value;
-    var soyad = document.getElementById("soyad").value;
-    var email = document.getElementById("email").value;
-    var tel = document.getElementById("tel").value;
+    // ID-lər vasitəsilə məlumatları alırıq
+    var ad = document.getElementById("ad").value.trim();
+    var soyad = document.getElementById("soyad").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var tel = document.getElementById("tel").value.trim();
     var konu = document.getElementById("konu").value;
-    var mesaj = document.getElementById("mesaj").value;
+    var mesaj = document.getElementById("mesaj").value.trim();
 
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    var telPattern = /^[0-9]+$/;
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var telRegex = /^[0-9]+$/;
 
-    // Denetleme Başlangıcı
     if (ad === "" || soyad === "" || email === "" || tel === "" || konu === "" || mesaj === "") {
-        alert("JS Mesajı: Lütfen formu eksiksiz doldurunuz!");
+        alert("JS: Boş alan bırakmayınız!");
         return false;
     }
-    if (!emailPattern.test(email)) {
-        alert("JS Mesajı: Geçerli bir e-mail formatı giriniz!");
+    if (!emailRegex.test(email)) {
+        alert("JS: E-posta formatı hatalı!");
         return false;
     }
-    if (!telPattern.test(tel)) {
-        alert("JS Mesajı: Telefon numarası sadece rakamlardan oluşmalıdır!");
+    if (!telRegex.test(tel)) {
+        alert("JS: Telefon sadece rakam olmalı!");
         return false;
     }
 
-    // Denetleme Başarılıysa Gönderim (Yönlendirme)
-    alert("JS Mesajı: Denetleme Başarılı! Bilgileriniz Sonuç Sayfasına Gönderiliyor...");
-    window.location.href = `sonuc.html?ad=${ad}&soyad=${soyad}&email=${email}&tel=${tel}&konu=${konu}&mesaj=${mesaj}&metot=VanillaJS`;
+    alert("JS: Başarılı! Sonuç sayfasına aktarılıyor...");
+    
+    // Veriləri URL-ə yapışdırıb göndəririk
+    var url = `sonuc.html?ad=${encodeURIComponent(ad)}&soyad=${encodeURIComponent(soyad)}&email=${encodeURIComponent(email)}&tel=${encodeURIComponent(tel)}&konu=${encodeURIComponent(konu)}&mesaj=${encodeURIComponent(mesaj)}&metot=VanillaJS`;
+    
+    window.location.href = url;
 }
