@@ -1,25 +1,18 @@
-// ==========================================================
-// 1. LOGIN (GİRİŞ) KONTROLÜ
-// ==========================================================
+// GİRİŞ KONTROLÜ
 function loginKontrol() {
     var user = document.getElementById("username").value;
     var pass = document.getElementById("password").value;
 
-    // Ödev kuralı: Kullanıcı adı = Mail, Şifre = Öğrenci No
-    // "g211210001" yazan yerleri kendi numaranla değiştirebilirsin
     if (user === "g211210001@sakarya.edu.tr" && pass === "g211210001") {
-        // Hoş geldin mesajını yeni sayfaya gönderiyoruz
         window.location.href = "giris_basarili.html?user=" + user.split('@')[0];
         return false;
     } else {
-        alert("Hatalı kullanıcı adı (email) veya şifre!");
+        alert("Hatalı kullanıcı adı veya şifre!");
         return false;
     }
 }
 
-// ==========================================================
-// 2. İLETİŞİM FORMU (VANILLA JS) KONTROLÜ
-// ==========================================================
+// İLETİŞİM JS KONTROLÜ
 function jsKontrolEt() {
     var ad = document.getElementById("ad").value;
     var soyad = document.getElementById("soyad").value;
@@ -28,28 +21,25 @@ function jsKontrolEt() {
     var konu = document.getElementById("konu").value;
     var mesaj = document.getElementById("mesaj").value;
 
-    // Email ve Telefon formatı için kurallar (Regex)
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     var telPattern = /^[0-9]+$/;
 
-    // Boş alan kontrolü
-    if (ad === "" || soyad === "" || email === "" || tel === "" || konu === "" || mesaj === "") {
-        alert("JavaScript Mesajı: Lütfen formu eksiksiz doldurunuz!");
+    if (ad == "" || soyad == "" || email == "" || tel == "" || konu == "" || mesaj == "") {
+        alert("JS: Boş alan bırakmayınız!");
         return false;
     }
-
-    // Email format kontrolü
     if (!emailPattern.test(email)) {
-        alert("JavaScript Mesajı: Geçerli bir e-mail adresi giriniz!");
+        alert("JS: Email formatı hatalı!");
         return false;
     }
-
-    // Telefon sadece rakam kontrolü
     if (!telPattern.test(tel)) {
-        alert("JavaScript Mesajı: Telefon numarası sadece rakamlardan oluşmalıdır!");
+        alert("JS: Telefon sadece rakam olmalı!");
         return false;
     }
 
+    alert("JS: Onaylandı! Bilgileriniz gönderiliyor...");
+    window.location.href = `sonuc.html?ad=${ad}&soyad=${soyad}&email=${email}&tel=${tel}&konu=${konu}&mesaj=${mesaj}&metot=JavaScript`;
+}
     alert("JavaScript Mesajı: Kontrol başarılı! Form gönderilmeye hazır.");
     return true;
 }
