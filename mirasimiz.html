@@ -7,9 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
-        body { background-color: #fcfcfc; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #fcfcfc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         .hero-bridge {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://sakarya.ktb.gov.tr/Resim/257321,justinianus-koprusu-5.png?0');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('kopru.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -18,7 +18,14 @@
         }
         .content-section { margin-top: -50px; }
         .info-card { border: none; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background: white; }
-        .bridge-main-img { border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); width: 100%; height: auto; }
+        .bridge-main-img { 
+            border-radius: 15px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
+            width: 100%; 
+            height: auto; 
+            transition: transform 0.3s ease;
+        }
+        .bridge-main-img:hover { transform: scale(1.02); }
         .spec-box { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #0d6efd; }
     </style>
 </head>
@@ -48,7 +55,7 @@
     <header class="hero-bridge text-center">
         <div class="container">
             <h1 class="display-4 fw-bold">Kültürel Mirasımız</h1>
-            <p class="lead">Sakarya'nın İncisi: Justinianus Köprüsü</p>
+            <p class="lead">Sakarya'nın Tarihi Hazinesi: Justinianus Köprüsü</p>
         </div>
     </header>
 
@@ -56,39 +63,47 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="card info-card p-4 p-md-5">
+                    
                     <section class="mb-5">
                         <h2 class="fw-bold text-dark mb-4 border-bottom pb-2">Tarihçesi</h2>
                         <div class="row align-items-center">
                             <div class="col-md-7">
-                                <p><strong>Justinianus Köprüsü</strong>, Bizans İmparatoru I. Justinianus tarafından MS 558-560 yıllarında inşa ettirilmiştir. UNESCO Dünya Miras Geçici Listesi'nde yer alan bu yapı, mühendislik harikası olarak kabul edilir.</p>
+                                <p style="line-height: 1.8; color: #444;">
+                                    <strong>Justinianus Köprüsü</strong> (Beşköprü), Bizans İmparatoru I. Justinianus tarafından MS 558-560 yılları arasında inşa edilmiştir. Yaklaşık 430 metre uzunluğundaki bu devasa yapı, Geç Roma döneminin en görkemli mühendislik örneklerinden biridir. Stratejik önemi nedeniyle yüzyıllar boyunca ticaret yollarının kalbi olmuştur.
+                                </p>
                             </div>
-                            <div class="col-md-5">
-                                <img src="https://serdivan.bel.tr/dosyalar/justinianus_koprusu_6.JPG" alt="Justinianus Köprüsü" class="bridge-main-img">
+                            <div class="col-md-5 mt-3 mt-md-0">
+                                <img src="kopru.jpg" alt="Justinianus Köprüsü Görseli" class="bridge-main-img">
                             </div>
                         </div>
                     </section>
 
                     <section class="mb-4">
-                        <h2 class="fw-bold text-dark mb-4 border-bottom pb-2">Teknik Detaylar</h2>
+                        <h2 class="fw-bold text-dark mb-4 border-bottom pb-2">Teknik Özellikler</h2>
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="spec-box h-100">
-                                    <h5 class="fw-bold">Boyutlar</h5>
-                                    <p>Uzunluk: 429m | Genişlik: 9.85m</p>
+                                    <h5 class="fw-bold"><i class="bi bi-rulers me-2"></i>Ölçüler</h5>
+                                    <p class="mb-0">Uzunluk: 429 Metre<br>Genişlik: 9.85 Metre<br>Kemer Sayısı: 12</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="spec-box h-100">
-                                    <h5 class="fw-bold">Yapı Malzemesi</h5>
-                                    <p>Tamamı kireç taşından devasa bloklarla örülmüştür.</p>
+                                    <h5 class="fw-bold"><i class="bi bi-bank me-2"></i>Statü</h5>
+                                    <p class="mb-0">UNESCO Dünya Miras Geçici Listesi'nde yer almaktadır. Tamamı kireç taşından yapılmıştır.</p>
                                 </div>
                             </div>
                         </div>
                     </section>
+
                 </div>
             </div>
         </div>
     </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="small mb-0">© 2026 Sakarya Üniversitesi Web Projesi Ödevi</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
